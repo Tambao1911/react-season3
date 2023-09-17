@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
-function CountDowm({ setIsDis, isCountDown }) {
+function CountDowm({ setIsDis, isDis }) {
 
-    const [count, setCount] = useState(10)
+    const [count, setCount] = useState(20)
     useEffect(() => {
         if (count === 0) {
             setIsDis(true)
             return
         }
-        if (isCountDown) {
+        if (isDis) {
             setCount(0)
         }
         const timer = setInterval(() => {

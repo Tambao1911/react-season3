@@ -1,15 +1,15 @@
 import OTPInput from "react-otp-input";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./Otp.module.scss";
-import CountDowm from "~/components/CountDowm";
+import CountDowmAnimation from "~/components/CountDowm/CountDowmAnimation";
 
 const cx = classNames.bind(styles);
 
 function InputOtp({ setUserOtp, handleOtp, isDis, setIsDis, optParen }) {
     const [otp, setOtp] = useState("");
-    const [isCountDown, setIsCountDown] = useState(false)
+    const inputRef = useRef()
 
     const handleChange = (otp) => {
         setOtp(otp);
@@ -17,12 +17,12 @@ function InputOtp({ setUserOtp, handleOtp, isDis, setIsDis, optParen }) {
     };
 
     const handleClear = () => {
-        setOtp('')
+        inputRef.current.restTimer()
     }
     return (
         <div className={cx('container-input')}>
             <div className={cx('count-down')}>
-                <CountDowm setIsDis={setIsDis} isCountDown={isCountDown} />
+                <CountDowmAnimation setIsDis={setIsDis} isDis={isDis} ref={inputRef} />
             </div>
             <OTPInput
                 value={otp}
@@ -33,12 +33,12 @@ function InputOtp({ setUserOtp, handleOtp, isDis, setIsDis, optParen }) {
             />
 
             <div className={cx('btn')}>
-                <button className={cx('btn-clear')} onClick={handleClear}>Clear</button>
+                <button className={cx('btn-clear')} onClick={handleClear} disabled={!isDis}>Clear</button>
                 <button className={cx('btn-check')} onClick={() => {
                     handleOtp();
                     setOtp('');
                     if (optParen && otp && optParen === +otp) {
-                        setIsCountDown(true)
+                        setIsDis(true)
                     }
                 }} disabled={isDis}>Get OTP</button>
             </div>

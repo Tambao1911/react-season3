@@ -14,7 +14,12 @@ function Otp() {
 
     const handleOtp = () => {
         if (!optParen || !userOtp) {
-            alert('Bạn Phải Click OR Nhập OTP !')
+            if (!optParen) {
+                alert(
+                    'Bạn Phải Click OTP !')
+                return;
+            }
+            if (!userOtp) alert('Bạn Phải Nhập OTP !')
         } else {
             if (optParen === +userOtp) {
                 alert("Bạn Đã Nhập Đúng!");
