@@ -10,6 +10,7 @@ function Nav() {
             <NavLink className={({ isActive }) => isActive ? cx("active") : ''} to="/">Home</NavLink>
             <NavLink className={({ isActive }) => isActive ? cx("active") : ''} to="/product">Product</NavLink>
             <NavLink className={({ isActive }) => isActive ? cx("active") : ''} to="/weather">Weather</NavLink>
+            <NavLink className={({ isActive }) => isActive ? cx("active") : ''} to="/otp">GenerateOTP</NavLink>
             <NavLink className={({ isActive }) => isActive ? cx("active") : ''} to="/about">About</NavLink>
         </div>
     );

@@ -1,0 +1,89 @@
+.container {
+    text-align: center;
+    border: 1px solid gray;
+    padding: 16px;
+    border-radius: 8px;
+    margin-top: 12px;
+
+    .container-generate {
+        margin-bottom: 16px;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        .btn-generate {
+            margin-right: 10px;
+            border-radius: 4px;
+            padding: 4px 10px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+                color: rgba($color: #000000, $alpha: 0.5);
+                background-color: #5d5858;
+            }
+        }
+        .otp-generate {
+            font-size: 15px;
+            color: #ccc;
+            height: 10px;
+            line-height: 8px;
+        }
+    }
+
+    .container-input {
+        margin-top: 20px;
+        border: 1px solid #4a4444;
+        padding: 0 20px 20px;
+        .input {
+            width: 3rem !important;
+            height: 3rem;
+            margin:  0 1rem;
+            font-size: 2rem;
+            outline: none;
+            border-radius: 10px;
+            border:  1px solid #ccc;
+        }
+
+        .count-down {
+            width: 50px;
+            height: 50px;
+            line-height: 45px;
+            border-radius: 50%;
+            margin: 6px auto 12px;
+            background: #000;
+        }
+
+        .btn {
+            margin-top: 10px;
+            .btn-clear,
+            .btn-check {
+                color: #ccc;
+                width: 60px;
+                height: 30px;
+                border-radius: 10px;
+                font-size: 13px;
+                background-color: transparent;
+                border: 1px solid #ccc;
+                margin-right: 20px;
+                cursor: pointer;
+
+                
+            }
+            button:hover {
+                background-color: gray;
+                color: #333;
+            }
+            button:disabled,
+            button[disabled]{
+                background-color: #ccc;
+                color: #666666;
+                border: 1px solid #999999;
+                cursor: default;
+
+            }
+        }
+    }
+    
+}

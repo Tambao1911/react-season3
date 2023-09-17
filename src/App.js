@@ -7,6 +7,7 @@ import Home from "./Layouts/components/Home";
 import Weather from "./Layouts/components/Weather";
 import About from "./Layouts/components/About";
 import NotFound from "./Layouts/components/NotFound/NotFound";
+import Otp from "./Layouts/components/OTP/Otp";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/product" element={<Products />} />
                         <Route path="/weather" element={<Weather />} />
+                        <Route path="/otp" element={<Otp />} />
                         <Route path="/about" element={<About />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
